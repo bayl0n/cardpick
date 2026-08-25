@@ -86,7 +86,7 @@ export default function Home() {
         ))}
       </section>
 
-      <section className="section intro">
+      {/* <section className="section intro">
         <div>
           <p className="section-kicker">Built for comparison</p>
           <h2>Find the card whose benefits actually match your spending.</h2>
@@ -96,9 +96,9 @@ export default function Home() {
           insurance rules, purchase rates, and the everyday details that can
           make a card useful or expensive.
         </p>
-      </section>
+      </section> */}
 
-      <section className="section" id="picks">
+      {/* <section className="section" id="picks">
         <div className="section-heading">
           <p className="section-kicker">Editor picks</p>
           <h2>Cards worth shortlisting this month</h2>
@@ -134,7 +134,7 @@ export default function Home() {
             </article>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <section className="section articles" id="guides">
         <div className="section-heading">
