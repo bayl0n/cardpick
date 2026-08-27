@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getAllArticles } from "../lib/articles";
+import { formatArticleDate, getAllArticles } from "../lib/articles";
 import MobileNavigation from "./components/mobile-navigation";
 
 const featuredCards = [
@@ -150,7 +150,12 @@ export default function Home() {
                   <h3>{article.title}</h3>
                   <p>{article.excerpt}</p>
                 </div>
-                <time>{article.readTime}</time>
+                <div className="article-meta">
+                  <time dateTime={article.date}>
+                    {formatArticleDate(article.date)}
+                  </time>
+                  <span>{article.readTime}</span>
+                </div>
               </article>
             </Link>
           ))}

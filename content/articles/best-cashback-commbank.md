@@ -2,8 +2,7 @@
 title: "💰 Best for Cashback: CommBank Ultimate Awards"
 category: "Cashback"
 excerpt: "Cashback redemption means using your credit card points to get money back or reduce your credit card balance..."
-readTime: "10 min read"
-order: 6
+date: "2026-08-27"
 ---
 
 ## What is Cashback Redemption?

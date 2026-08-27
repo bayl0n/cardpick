@@ -2,8 +2,7 @@
 title: "When a high annual fee is worth it"
 category: "Fees"
 excerpt: "The benefits that can offset a premium card fee, and the perks that rarely move the needle."
-readTime: "5 min read"
-order: 2
+date: "2026-08-27"
 ---
 
 A premium card can justify a high annual fee, but only when its benefits replace spending you would otherwise make. A long list of perks is not the same as a positive return.

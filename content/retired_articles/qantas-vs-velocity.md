@@ -2,8 +2,7 @@
 title: "How to compare Qantas and Velocity earn rates without getting lost"
 category: "Rewards"
 excerpt: "A practical way to value points, caps, bonus offers, and transfer partners before you apply."
-readTime: "7 min read"
-order: 1
+date: "2026-08-27"
 ---
 
 The biggest earn rate is not automatically the best deal. A useful comparison starts with where you already spend, how you redeem points, and which fees you will actually pay.

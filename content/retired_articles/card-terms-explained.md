@@ -2,8 +2,7 @@
 title: "Balance transfers, interest-free days, and purchase rates explained"
 category: "Beginner Guide"
 excerpt: "A plain-English guide to the card terms that matter if you carry a balance or want breathing room."
-readTime: "8 min read"
-order: 4
+date: "2026-08-27"
 ---
 
 Credit card rates and promotional terms describe different kinds of debt. Understanding which rate applies—and when—helps you compare the real cost of a card.

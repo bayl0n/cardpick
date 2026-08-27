@@ -3,8 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { getAllArticles, getArticle } from "../../../lib/articles";
-import ThemeToggle from "../../components/theme-toggle";
+import {
+  formatArticleDate,
+  getAllArticles,
+  getArticle,
+} from "../../../lib/articles";
+import MobileNavigation from "../../components/mobile-navigation";
 
 type ArticlePageProps = {
   params: Promise<{ slug: string }>;
@@ -46,10 +50,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         <Link className="brand" href="/">
           <span>CardPick</span>
         </Link>
-        <div className="article-header-actions">
-          <Link href="/#guides">All guides</Link>
-          <ThemeToggle />
-        </div>
+        <MobileNavigation />
       </header>
 
       <article className="article-shell">
@@ -57,7 +58,12 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
           <p className="section-kicker">{article.category}</p>
           <h1 className="article-heading">{article.title}</h1>
           <p>{article.excerpt}</p>
-          <span>{article.readTime}</span>
+          <div className="article-meta">
+            <time dateTime={article.date}>
+              {formatArticleDate(article.date)}
+            </time>
+            <span>{article.readTime}</span>
+          </div>
         </header>
 
         <div className="markdown-content">

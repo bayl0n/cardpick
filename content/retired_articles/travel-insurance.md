@@ -2,8 +2,7 @@
 title: "Credit card travel insurance: the checks Australians should make first"
 category: "Travel"
 excerpt: "Activation rules, exclusions, pre-existing conditions, and excess amounts to review before booking."
-readTime: "6 min read"
-order: 3
+date: "2026-08-27"
 ---
 
 Complimentary travel insurance can be valuable, but cover is not automatic in every situation. The policy wording—not the card's marketing page—determines whether a claim is eligible.

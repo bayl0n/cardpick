@@ -2,8 +2,7 @@
 title: "Best Australian Credit Cards for Airport Lounge Passes"
 category: "Cards"
 excerpt: "Test"
-readTime: "10 min read"
-order: 8
+date: "2026-08-27"
 ---
 
 If you travel often, having a credit card that gives you **airport lounge access** can make a big difference. Instead of waiting at the airport, you can relax in a comfortable lounge, enjoy food and drinks, and sometimes even use the showers before your flight.

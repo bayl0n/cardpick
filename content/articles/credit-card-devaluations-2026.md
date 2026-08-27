@@ -2,8 +2,7 @@
 title: "Australian Credit Card Devaluations 2026: All Banks Compared.  "
 category: "Credit Cards"
 excerpt: "Comparing all credit card devaluations"
-readTime: "10 min read"
-order: 5
+date: "2026-08-27"
 ---
 
 Made on 16 August 2026
