@@ -1,7 +1,7 @@
 ---
 title: "Australian Credit Card Devaluations 2026: All Banks Compared.  "
 category: "Credit Cards"
-excerpt: "Comparing all credit card devaluations"
+excerpt: "See how Australian credit card rewards may change in 2026, with a bank-by-bank comparison of points, fees and transfer value ahead of RBA reforms."
 date: "2026-08-27"
 ---
 

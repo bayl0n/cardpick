@@ -1,7 +1,7 @@
 ---
 title: "💰 Best for Cashback: CommBank Ultimate Awards"
 category: "Cashback"
-excerpt: "Cashback redemption means using your credit card points to get money back or reduce your credit card balance..."
+excerpt: "Compare the CommBank Ultimate Awards card's cashback value, earn rate, fees and travel perks to see when its rewards can outweigh the annual fee."
 date: "2026-08-27"
 ---
 

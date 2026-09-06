@@ -1,7 +1,34 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { formatArticleDate, getAllArticles } from "../lib/articles";
+import { siteDescription, siteTitle } from "../lib/seo";
 import MobileNavigation from "./components/mobile-navigation";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: siteTitle,
+  },
+  description: siteDescription,
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-AU": "/",
+    },
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_AU",
+    url: "/",
+    title: siteTitle,
+    description: siteDescription,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+  },
+};
 
 const featuredCards = [
   {
@@ -42,9 +69,9 @@ export default function Home() {
   return (
     <main>
       <header className="site-header">
-        <a className="brand" href="#">
+        <Link className="brand" href="/" aria-label="CardPick home">
           <span>CardPick</span>
-        </a>
+        </Link>
         <MobileNavigation />
       </header>
 

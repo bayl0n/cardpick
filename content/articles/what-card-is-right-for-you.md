@@ -1,7 +1,7 @@
 ---
 title: "What Card is Right for You?"
 category: "Credit Cards"
-excerpt: "Before choosing a credit card, ask yourself one simple question:"
+excerpt: "Learn how to choose an Australian credit card based on your monthly spend, travel habits, annual fees, rewards and benefits you will actually use."
 date: "2026-08-27"
 ---
 

@@ -27,7 +27,7 @@ function readString(
     throw new Error(`Missing or invalid "${field}" in ${filename}`);
   }
 
-  return value;
+  return value.trim();
 }
 
 function readDate(value: unknown, filename: string): string {

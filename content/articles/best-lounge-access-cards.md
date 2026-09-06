@@ -1,7 +1,7 @@
 ---
 title: "Best Australian Credit Cards for Airport Lounge Passes"
 category: "Cards"
-excerpt: "Test"
+excerpt: "Compare Australian credit cards with airport lounge access, from low-fee passes to premium unlimited entry, and find the right fit for your travel habits."
 date: "2026-08-27"
 ---
 
