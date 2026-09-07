@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { formatArticleDate, getAllArticles } from "../lib/articles";
 import { siteDescription, siteTitle } from "../lib/seo";
-import MobileNavigation from "./components/mobile-navigation";
+import { Arrow, SiteFooter, SiteHeader } from "./components/site-chrome";
 
 export const metadata: Metadata = {
   title: {
@@ -30,190 +29,108 @@ export const metadata: Metadata = {
   },
 };
 
-const featuredCards = [
-  {
-    name: "Velocity Points All-Rounder",
-    fit: "Best for frequent domestic travellers",
-    annualFee: "$295",
-    earn: "1.25 Velocity pts / $1 eligible spend",
-    perks: ["2 lounge passes", "Travel insurance", "60k bonus points"],
-    tone: "blue",
-  },
-  {
-    name: "Everyday Cashback Plus",
-    fit: "Best for groceries and fuel",
-    annualFee: "$99",
-    earn: "Up to 3% back in rotating categories",
-    perks: ["No FX margin", "Mobile wallet offers", "Low income threshold"],
-    tone: "green",
-  },
-  {
-    name: "Premium Qantas Rewards",
-    fit: "Best for points maximisers",
-    annualFee: "$450",
-    earn: "1 Qantas pt / $1 up to cap",
-    perks: ["90k bonus points", "Airport lounge access", "Concierge"],
-    tone: "charcoal",
-  },
+const topics = [
+  { label: "Find your starting point", title: "Choosing a card", description: "Understand the fees, benefits and everyday fit.", href: "/articles/what-card-is-right-for-you", symbol: "card" },
+  { label: "Make everyday spending count", title: "Cashback & rewards", description: "Look beyond the bonus and into the real value.", href: "/articles/best-cashback-commbank", symbol: "reward" },
+  { label: "Before your next departure", title: "Travel & lounge access", description: "Get to know the perks that go the distance.", href: "/articles/best-lounge-access-cards", symbol: "travel" },
 ];
 
-const metrics = [
-  ["120+", "cards tracked"],
-  ["24", "benefit categories"],
-  ["Weekly", "offer refresh"],
-];
+function TopicIcon({ symbol }: { symbol: string }) {
+  return (
+    <svg className="topic-icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+      {symbol === "card" ? <><rect x="4" y="7" width="24" height="18" rx="3" /><path d="M4 13h24M9 20h5" /></> :
+        symbol === "reward" ? <><path d="m16 4 3.7 7.5 8.3 1.2-6 5.8 1.4 8.3L16 23l-7.4 3.8 1.4-8.3-6-5.8 8.3-1.2Z" /></> :
+        <><path d="m5 17 9 2 2 9 3-1 1-9 7-7c3-3 1-5-2-3l-8 6-9-1Z" /><path d="m6 25 4-4" /></>}
+    </svg>
+  );
+}
 
 export default function Home() {
   const articles = getAllArticles();
+  const [featured, ...otherArticles] = articles;
 
   return (
-    <main>
-      <header className="site-header">
-        <Link className="brand" href="/" aria-label="CardPick home">
-          <span>CardPick</span>
-        </Link>
-        <MobileNavigation />
-      </header>
-
-      <section className="hero">
-        <Image
-          src="/cardpick-hero.png"
-          alt="Credit cards, coffee, and a phone showing comparison rows on a Sydney cafe table"
-          fill
-          priority
-          sizes="100vw"
-          className="hero-image"
-        />
-        <div className="hero-shade" />
-        <div className="hero-content">
-          <p className="eyebrow">Australian credit card intelligence</p>
-          <h1>CardPick</h1>
-          <p className="hero-copy">
-            Clear, benefit-led guides to help Australians compare rewards cards,
-            cashback offers, travel perks, fees, and sign-up bonuses with less
-            noise.
-          </p>
-          <div className="hero-actions">
-            <a className="primary-action" href="#picks">
-              View top picks
-            </a>
-            <a className="secondary-action" href="#guides">
-              Read latest guides
-            </a>
+    <>
+      <SiteHeader />
+      <main id="main-content">
+        <section className="hero container" aria-labelledby="hero-title">
+          <div className="hero-content">
+            <p className="eyebrow"><span /> Australian credit card guides</p>
+            <h1 id="hero-title">Your next card.<br />A <em>smarter pick.</em></h1>
+            <p className="hero-copy">Make sense of the points, perks and fine print. Clear guides to help you find a credit card that fits your life.</p>
+            <div className="hero-actions">
+              <Link className="primary-action" href="#guides">Explore the guides <Arrow /></Link>
+              <Link className="text-link" href="/articles/what-card-is-right-for-you">New to credit cards? <Arrow diagonal /></Link>
+            </div>
+            <p className="hero-note">Rewards. Travel. Everyday value. Start with what matters to you.</p>
           </div>
-        </div>
-      </section>
-
-      <section className="metrics" aria-label="CardPick coverage">
-        {metrics.map(([value, label]) => (
-          <div key={label}>
-            <strong>{value}</strong>
-            <span>{label}</span>
+          <div className="hero-art" aria-hidden="true">
+            <div className="art-orbit orbit-one" /><div className="art-orbit orbit-two" />
+            <span className="art-label">A little clarity. A better choice.</span>
+            <div className="illustrated-card card-back"><span>Everyday possibilities</span><span className="card-rings" /></div>
+            <div className="illustrated-card card-front">
+              <span className="art-card-brand">CardPick<span>.</span></span>
+              <svg className="card-chip" viewBox="0 0 40 30"><rect x="1" y="1" width="38" height="28" rx="6" /><path d="M14 1v28M26 1v28M1 10h13m12 0h13M1 20h13m12 0h13M14 15h12" /></svg>
+              <span className="card-tagline">Choose with<br /><em>confidence.</em></span>
+              <span className="card-monogram">cp.</span>
+            </div>
+            <div className="art-caption"><span className="art-spark">✳</span> More understanding.<br />More possibility.</div>
           </div>
-        ))}
-      </section>
+        </section>
 
-      {/* <section className="section intro">
-        <div>
-          <p className="section-kicker">Built for comparison</p>
-          <h2>Find the card whose benefits actually match your spending.</h2>
-        </div>
-        <p>
-          CardPick weighs fees, points value, bonus eligibility, travel perks,
-          insurance rules, purchase rates, and the everyday details that can
-          make a card useful or expensive.
-        </p>
-      </section> */}
-
-      {/* <section className="section" id="picks">
-        <div className="section-heading">
-          <p className="section-kicker">Editor picks</p>
-          <h2>Cards worth shortlisting this month</h2>
-        </div>
-        <div className="card-grid">
-          {featuredCards.map((card) => (
-            <article
-              className="pick-card"
-              data-tone={card.tone}
-              key={card.name}
-            >
-              <div className="mini-card" aria-hidden="true">
-                <span />
-                <span />
-              </div>
-              <p>{card.fit}</p>
-              <h3>{card.name}</h3>
-              <dl>
-                <div>
-                  <dt>Annual fee</dt>
-                  <dd>{card.annualFee}</dd>
-                </div>
-                <div>
-                  <dt>Earn rate</dt>
-                  <dd>{card.earn}</dd>
-                </div>
-              </dl>
-              <ul>
-                {card.perks.map((perk) => (
-                  <li key={perk}>{perk}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section> */}
-
-      <section className="section articles" id="guides">
-        <div className="section-heading">
-          <p className="section-kicker">Latest articles</p>
-          <h2>Fresh explainers for smarter applications</h2>
-        </div>
-        <div className="article-list">
-          {articles.map((article) => (
-            <Link href={`/articles/${article.slug}`} key={article.slug}>
-              <article className="article-row">
-                <div>
-                  <span>{article.category}</span>
-                  <h3>{article.title}</h3>
-                  <p>{article.excerpt}</p>
-                </div>
-                <div className="article-meta">
-                  <time dateTime={article.date}>
-                    {formatArticleDate(article.date)}
-                  </time>
-                  <span>{article.readTime}</span>
-                </div>
-              </article>
+        <section className="topic-section container" aria-label="Explore by interest">
+          {topics.map((topic) => (
+            <Link className="topic-link" href={topic.href} key={topic.title}>
+              <TopicIcon symbol={topic.symbol} />
+              <div><span className="topic-label">{topic.label}</span><h2>{topic.title}</h2><p>{topic.description}</p></div>
+              <Arrow diagonal />
             </Link>
           ))}
-        </div>
-      </section>
+        </section>
 
-      <section className="newsletter" id="newsletter">
-        <div>
-          <p className="section-kicker">Weekly shortlist</p>
-          <h2>Get the best new offers before you apply.</h2>
-        </div>
-        <form>
-          <label htmlFor="email">Email address</label>
-          <div className="signup-row">
-            <input
-              id="email"
-              name="email"
-              type="email"
-              placeholder="you@example.com"
-            />
-            <button type="submit">Subscribe</button>
+        <section className="guides-section" id="guides" aria-labelledby="guides-title">
+          <div className="container">
+            <div className="section-heading">
+              <div><p className="section-kicker">The CardPick journal</p><h2 id="guides-title">A clearer view of credit cards.</h2></div>
+              <p>Practical explainers. Useful comparisons.<br />A little homework that goes a long way.</p>
+            </div>
+            {featured && (
+              <Link className="featured-guide" href={`/articles/${featured.slug}`}>
+                <div className="feature-art" aria-hidden="true">
+                  <div className="feature-globe"><span /><span /><span /></div>
+                  <svg className="feature-plane" viewBox="0 0 32 32" fill="none"><path d="m3 18 10 2 3 9 3-1 1-10 9-9c2-3 0-5-3-3l-9 8-10-1Z" /></svg>
+                  <span className="feature-art-label">The more you know,<br /><em>the further you go.</em></span>
+                </div>
+                <article className="featured-content">
+                  <div className="guide-labels"><span className="category-label">{featured.category}</span><span className="latest-label">Latest guide</span></div>
+                  <h3>{featured.title}</h3>
+                  <p>{featured.excerpt}</p>
+                  <div className="guide-bottom"><div className="article-meta"><time dateTime={featured.date}>{formatArticleDate(featured.date)}</time><span>{featured.readTime}</span></div><span className="circle-arrow"><Arrow /></span></div>
+                </article>
+              </Link>
+            )}
+            <div className="article-grid">
+              {otherArticles.map((article) => (
+                <Link className="guide-card" href={`/articles/${article.slug}`} key={article.slug}>
+                  <article>
+                    <span className="category-label">{article.category}</span>
+                    <h3>{article.title}</h3>
+                    <p>{article.excerpt}</p>
+                    <div className="guide-bottom"><div className="article-meta"><time dateTime={article.date}>{formatArticleDate(article.date)}</time><span>{article.readTime}</span></div><Arrow diagonal /></div>
+                  </article>
+                </Link>
+              ))}
+            </div>
           </div>
-        </form>
-      </section>
+        </section>
 
-      <footer>
-        <p>
-          CardPick is an editorial comparison concept. Always read the provider
-          terms, fees, eligibility criteria, and PDS/TMD before applying.
-        </p>
-      </footer>
-    </main>
+        <section className="getting-started container">
+          <div className="getting-started-icon" aria-hidden="true"><TopicIcon symbol="card" /></div>
+          <div><p className="section-kicker">Start with the essentials</p><h2>The right card starts with you.</h2><p>Your spending, your travel plans, your priorities. Get to know what to look for before you apply.</p></div>
+          <Link className="primary-action" href="/articles/what-card-is-right-for-you">Find your starting point <Arrow /></Link>
+        </section>
+      </main>
+      <SiteFooter />
+    </>
   );
 }

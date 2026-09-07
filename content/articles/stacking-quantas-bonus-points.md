@@ -1,7 +1,7 @@
 ---
 title: "Stacking Qantas Bonus Points: The Credit Card Rotation Strategy for Free Flights with Qantas. "
 category: "Credit Cards"
-excerpt: "The basic strategy is simple:"
+excerpt: "Explore Qantas credit card bonus points, rotation strategies, spending requirements and the eligibility rules to consider before applying."
 date: "2026-09-06"
 ---
 

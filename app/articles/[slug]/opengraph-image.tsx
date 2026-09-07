@@ -20,8 +20,8 @@ export default async function ArticleOpenGraphImage({
     (
       <div
         style={{
-          background: "#edf4f2",
-          color: "#182022",
+          background: "#eef1ee",
+          color: "#013D57",
           display: "flex",
           flexDirection: "column",
           height: "100%",
@@ -32,7 +32,7 @@ export default async function ArticleOpenGraphImage({
       >
         <div
           style={{
-            color: "#0d6f72",
+            color: "#013D57",
             display: "flex",
             fontSize: 28,
             fontWeight: 800,
@@ -48,7 +48,7 @@ export default async function ArticleOpenGraphImage({
         >
           <div
             style={{
-              color: "#0d6f72",
+              color: "#013D57",
               display: "flex",
               fontSize: 24,
               fontWeight: 700,
@@ -73,7 +73,7 @@ export default async function ArticleOpenGraphImage({
         </div>
         <div
           style={{
-            background: "#d85b46",
+            background: "#7E9296",
             display: "flex",
             height: 10,
             width: 170,

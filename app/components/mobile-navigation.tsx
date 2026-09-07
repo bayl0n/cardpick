@@ -17,43 +17,14 @@ type NavigationItem =
     };
 
 const navigationItems: NavigationItem[] = [
-  {
-    label: "Beginner",
-    children: [
-      {
-        href: "/articles/what-card-is-right-for-you",
-        label: "Things you must know",
-      },
-    ],
-  },
-  {
-    href: "/articles/what-card-is-right-for-you",
-    label: "Pick your best cards",
-  },
-  {
-    label: "Credit cards",
-    children: [
-      {
-        href: "/articles/best-cashback-commbank",
-        label: "Bank rewards",
-      },
-      { href: "/#guides", label: "Qantas" },
-      { href: "/#guides", label: "Velocity" },
-    ],
-  },
-  {
-    label: "Updates",
-    children: [
-      {
-        href: "/articles/credit-card-devaluations-2026",
-        label: "Devaluations",
-      },
-    ],
-  },
-  {
-    href: "/articles/best-lounge-access-cards",
-    label: "Cards for lounge",
-  },
+  { href: "/#guides", label: "All guides" },
+  { label: "Rewards & travel", children: [
+    { href: "/articles/best-cashback-commbank", label: "Cashback & rewards" },
+    { href: "/articles/stacking-quantas-bonus-points", label: "Qantas points" },
+    { href: "/articles/best-lounge-access-cards", label: "Lounge access" },
+  ] },
+  { href: "/articles/credit-card-devaluations-2026", label: "Card updates" },
+  { href: "/articles/what-card-is-right-for-you", label: "Start here" },
 ];
 
 export default function MobileNavigation() {
@@ -81,6 +52,11 @@ export default function MobileNavigation() {
   useEffect(() => {
     function closeOnEscape(event: KeyboardEvent) {
       if (event.key === "Escape") {
+        if (navigationRef.current?.contains(document.activeElement)) {
+          navigationRef.current
+            .querySelector<HTMLButtonElement>('button[aria-expanded="true"]')
+            ?.focus();
+        }
         setIsOpen(false);
         setOpenGroup(null);
       }

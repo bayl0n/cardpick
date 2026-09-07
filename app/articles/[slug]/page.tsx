@@ -13,7 +13,7 @@ import {
   serializeJsonLd,
   siteName,
 } from "../../../lib/seo";
-import MobileNavigation from "../../components/mobile-navigation";
+import { Arrow, SiteFooter, SiteHeader } from "../../components/site-chrome";
 
 type ArticlePageProps = {
   params: Promise<{ slug: string }>;
@@ -122,53 +122,51 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
   };
 
   return (
-    <main className="article-page">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: serializeJsonLd(articleJsonLd) }}
-      />
-      <header className="article-site-header">
-        <Link className="brand" href="/" aria-label="CardPick home">
-          <span>CardPick</span>
-        </Link>
-        <MobileNavigation />
-      </header>
+    <>
+      <SiteHeader />
+      <main className="article-page" id="main-content">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(articleJsonLd) }}
+        />
+        <article className="article-shell">
+          <Link className="back-link" href="/#guides">
+            <Arrow /> All guides
+          </Link>
+          <header className="article-title">
+            <p className="section-kicker">{article.category}</p>
+            <h1 className="article-heading">{article.title}</h1>
+            <p>{article.excerpt}</p>
+            <div className="article-meta">
+              <time dateTime={article.date}>
+                {formatArticleDate(article.date)}
+              </time>
+              <span>{article.readTime}</span>
+            </div>
+          </header>
 
-      <article className="article-shell">
-        <header className="article-title">
-          <p className="section-kicker">{article.category}</p>
-          <h1 className="article-heading">{article.title}</h1>
-          <p>{article.excerpt}</p>
-          <div className="article-meta">
-            <time dateTime={article.date}>
-              {formatArticleDate(article.date)}
-            </time>
-            <span>{article.readTime}</span>
+          <div className="markdown-content">
+            <ReactMarkdown
+              remarkPlugins={[remarkGfm]}
+              components={{
+                table: ({ node: _node, ...props }) => (
+                  <div
+                    className="markdown-table-scroll"
+                    tabIndex={0}
+                    role="region"
+                    aria-label="Scrollable comparison table"
+                  >
+                    <table {...props} />
+                  </div>
+                ),
+              }}
+            >
+              {article.content}
+            </ReactMarkdown>
           </div>
-        </header>
-
-        <div className="markdown-content">
-          <ReactMarkdown
-            remarkPlugins={[remarkGfm]}
-            components={{
-              table: ({ node: _node, ...props }) => (
-                <div className="markdown-table-scroll">
-                  <table {...props} />
-                </div>
-              ),
-            }}
-          >
-            {article.content}
-          </ReactMarkdown>
-        </div>
-      </article>
-
-      <footer>
-        <p>
-          CardPick is an editorial comparison concept. Always read the provider
-          terms, fees, eligibility criteria, and PDS/TMD before applying.
-        </p>
-      </footer>
-    </main>
+        </article>
+      </main>
+      <SiteFooter />
+    </>
   );
 }
