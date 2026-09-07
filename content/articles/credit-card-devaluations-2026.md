@@ -5,8 +5,6 @@ excerpt: "See how Australian credit card rewards may change in 2026, with a bank
 date: "2026-08-27"
 ---
 
-Made on 16 August 2026
-
 ### What is happening ???
 
 Starting 1 October 2026, The Reserve Bank of Australia (RBA) will change card rules.  

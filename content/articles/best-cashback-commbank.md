@@ -1,5 +1,5 @@
 ---
-title: "💰 Best for Cashback: CommBank Ultimate Awards"
+title: "Best for Cashback: CommBank Ultimate Awards"
 category: "Cashback"
 excerpt: "Compare the CommBank Ultimate Awards card's cashback value, earn rate, fees and travel perks to see when its rewards can outweigh the annual fee."
 date: "2026-08-27"
@@ -14,7 +14,7 @@ For example, if you earn **2 points for every $1 spent** and **20,000 points = $
 
 Knowing roughly how much you spend each month makes it easier to compare cards, because each card has different **earning rates, annual fees and cashback values**.
 
-## 💰 Best for Cashback: CommBank Ultimate Awards
+## Best for Cashback: CommBank Ultimate Awards
 
 **Updated: 12 August 2026**
 
@@ -38,7 +38,7 @@ $100 Required 28,300 Points
 
 \*Cashback redemption values can change. **Check the current redemption value before applying.**
 
-💳**Main Features**
+**Main Features**
 
 - **$35/month fee** — waived when you spend **$4,000 per statement period**
 - Earn **up to 3 Awards points/$1**
