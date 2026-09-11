@@ -42,7 +42,7 @@ So, I’ve compared some of the **best credit cards in Australia for airport lou
 | 23  | Qantas Money Titanium                        | 2 First + 2 Qantas Club/Business = 4      | $1,200                         |
 | 24  | Amex Platinum                                | Unlimited Global Lounge Collection        | $1,450                         |
 
-⚠️ **A few important corrections**
+**A few important corrections**
 
 **Bankwest More World is the standout.**
 It’s **$270/year and 10 lounge visits** through Mastercard Travel Pass. Bankwest explicitly says the 10 visits are **per account**, and each visit can be used by either the primary cardholder or a guest.

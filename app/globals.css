@@ -923,7 +923,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .article-shell {
-  width: min(900px, calc(100% - 96px));
+  width: min(1240px, calc(100% - 96px));
   margin-inline: auto;
   padding: 43px 0 80px;
 }
@@ -933,6 +933,7 @@ a:focus-visible, button:focus-visible {
   align-items: center;
   gap: 10px;
   margin-bottom: 37px;
+  margin-left: max(0px, calc((100% - 900px) / 2));
   color: var(--muted);
   font-size: 12px;
 }
@@ -947,6 +948,8 @@ a:focus-visible, button:focus-visible {
 }
 
 .article-title {
+  max-width: 900px;
+  margin-inline: auto;
   border-bottom: 1px solid var(--line);
   padding-bottom: 32px;
 }
@@ -973,12 +976,16 @@ a:focus-visible, button:focus-visible {
 }
 
 .markdown-content {
-  max-width: 760px;
   margin-inline: auto;
   padding-top: 25px;
   font-size: 16px;
   line-height: 1.85;
   overflow-wrap: anywhere;
+}
+
+.markdown-content > :not(.markdown-table-scroll) {
+  max-width: 760px;
+  margin-inline: auto;
 }
 
 .markdown-content h2, .markdown-content h3 {
@@ -1055,6 +1062,7 @@ a:focus-visible, button:focus-visible {
 }
 
 .markdown-table-scroll {
+  max-width: 100%;
   margin: 1.8em 0;
   overflow-x: auto;
   border: 1px solid var(--line);
@@ -1072,13 +1080,19 @@ a:focus-visible, button:focus-visible {
   border-collapse: collapse;
   font-size: 13px;
   line-height: 1.6;
+  overflow-wrap: normal;
 }
 
 .markdown-content th, .markdown-content td {
+  min-width: 8rem;
   padding: 14px 16px;
   border-bottom: 1px solid var(--line);
   text-align: left;
   vertical-align: top;
+}
+
+.markdown-content th:first-child, .markdown-content td:first-child {
+  min-width: auto;
 }
 
 .markdown-content th {
