@@ -56,7 +56,7 @@ export default async function ArticleOpenGraphImage({
               textTransform: "uppercase",
             }}
           >
-            {article?.category ?? "Credit card guide"}
+            {article?.category.join(" / ") ?? "Credit card guide"}
           </div>
           <div
             style={{

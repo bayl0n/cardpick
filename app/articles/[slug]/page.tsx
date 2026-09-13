@@ -59,7 +59,8 @@ export async function generateMetadata({
       title: article.title,
       description: article.excerpt,
       publishedTime: `${article.date}T00:00:00.000Z`,
-      section: article.category,
+      section: article.category[0],
+      tags: article.category.slice(1),
     },
     twitter: {
       card: "summary_large_image",
@@ -134,7 +135,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             <Arrow /> All guides
           </Link>
           <header className="article-title">
-            <p className="section-kicker">{article.category}</p>
+            <p className="section-kicker">{article.category.join(" / ")}</p>
             <h1 className="article-heading">{article.title}</h1>
             <p>{article.excerpt}</p>
             <div className="article-meta">

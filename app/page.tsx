@@ -102,7 +102,7 @@ export default function Home() {
                   <span className="feature-art-label">The more you know,<br /><em>the further you go.</em></span>
                 </div>
                 <article className="featured-content">
-                  <div className="guide-labels"><span className="category-label">{featured.category}</span><span className="latest-label">Latest guide</span></div>
+                  <div className="guide-labels"><span className="category-label">{featured.category.join(" / ")}</span><span className="latest-label">Latest guide</span></div>
                   <h3>{featured.title}</h3>
                   <p>{featured.excerpt}</p>
                   <div className="guide-bottom"><div className="article-meta"><time dateTime={featured.date}>{formatArticleDate(featured.date)}</time><span>{featured.readTime}</span></div><span className="circle-arrow"><Arrow /></span></div>
@@ -113,7 +113,7 @@ export default function Home() {
               {otherArticles.map((article) => (
                 <Link className="guide-card" href={`/articles/${article.slug}`} key={article.slug}>
                   <article>
-                    <span className="category-label">{article.category}</span>
+                    <span className="category-label">{article.category.join(" / ")}</span>
                     <h3>{article.title}</h3>
                     <p>{article.excerpt}</p>
                     <div className="guide-bottom"><div className="article-meta"><time dateTime={article.date}>{formatArticleDate(article.date)}</time><span>{article.readTime}</span></div><Arrow diagonal /></div>

@@ -8,7 +8,7 @@ const wordsPerMinute = 200;
 export type ArticleSummary = {
   slug: string;
   title: string;
-  category: string;
+  category: string[];
   excerpt: string;
   readTime: string;
   date: string;
@@ -28,6 +28,16 @@ function readString(
   }
 
   return value.trim();
+}
+
+function readCategories(value: unknown, filename: string): string[] {
+  const categories = Array.isArray(value) ? value : [value];
+
+  if (categories.length === 0) {
+    throw new Error(`Missing or invalid "category" in ${filename}`);
+  }
+
+  return categories.map((category) => readString(category, "category", filename));
 }
 
 function readDate(value: unknown, filename: string): string {
@@ -68,7 +78,7 @@ function readArticleFile(filename: string): Article {
   return {
     slug,
     title: readString(data.title, "title", filename),
-    category: readString(data.category, "category", filename),
+    category: readCategories(data.category, filename),
     excerpt: readString(data.excerpt, "excerpt", filename),
     readTime: calculateReadTime(content),
     date: readDate(data.date, filename),

@@ -17,14 +17,25 @@ type NavigationItem =
     };
 
 const navigationItems: NavigationItem[] = [
+  { href: "/", label: "Home" },
   { href: "/#guides", label: "All guides" },
-  { label: "Rewards & travel", children: [
-    { href: "/articles/best-cashback-commbank", label: "Cashback & rewards" },
-    { href: "/articles/stacking-quantas-bonus-points", label: "Qantas points" },
-    { href: "/articles/best-lounge-access-cards", label: "Lounge access" },
+  { label: "Start here", children: [
+    { href: "/articles/what-card-is-right-for-you", label: "Best for beginners" },
+    { href: "/coming-soon", label: "Starter kit" },
+  ] },
+  { href: "/articles/what-card-is-right-for-you", label: "Best card for you" },
+  { label: "Credit Card", children: [
+    { href: "/articles/best-cashback-commbank", label: "Bank Rewards" },
+    { href: "/articles/stacking-quantas-bonus-points", label: "Qantas Rewards" },
+    { href: "/coming-soon", label: "Velocity Rewards" },
+    { href: "/coming-soon", label: "Other rewards" },
   ] },
   { href: "/articles/credit-card-devaluations-2026", label: "Card updates" },
-  { href: "/articles/what-card-is-right-for-you", label: "Start here" },
+  { label: "Reward & Travel", children: [
+    { href: "/coming-soon", label: "Lounge review" },
+    { href: "/coming-soon", label: "Flight redeeming" },
+    { href: "/coming-soon", label: "Hotels fast track" },
+  ] },
 ];
 
 export default function MobileNavigation() {
@@ -127,7 +138,7 @@ export default function MobileNavigation() {
           const isGroupOpen = openGroup === item.label;
           const submenuId = `submenu-${item.label
             .toLowerCase()
-            .replaceAll(" ", "-")}`;
+            .replace(/[^a-z0-9]+/g, "-")}`;
 
           return (
             <div

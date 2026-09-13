@@ -168,12 +168,6 @@ a:focus-visible, button:focus-visible {
   color: var(--accent);
 }
 
-.nav-link:last-of-type {
-  padding: 11px 17px;
-  border: 1px solid var(--line);
-  border-radius: 5px;
-}
-
 .nav-group {
   position: relative;
 }
@@ -193,7 +187,7 @@ a:focus-visible, button:focus-visible {
 .nav-submenu {
   position: absolute;
   top: calc(100% + 8px);
-  left: -15px;
+  right: 0;
   min-width: 215px;
   display: none;
   padding: 8px;
@@ -928,6 +922,16 @@ a:focus-visible, button:focus-visible {
   padding: 43px 0 80px;
 }
 
+.coming-soon {
+  min-height: 60vh;
+  padding-block: 80px;
+}
+
+.coming-soon .article-title {
+  border: 0;
+  padding-bottom: 0;
+}
+
 .back-link {
   display: inline-flex;
   align-items: center;
@@ -1176,11 +1180,7 @@ a:focus-visible, button:focus-visible {
   }
 }
 
-@media (max-width: 850px) {
-
-  .header-inner {
-    min-height: 76px;
-  }
+@media (max-width: 1280px) {
 
   .navigation {
     position: relative;
@@ -1245,10 +1245,6 @@ a:focus-visible, button:focus-visible {
     font-size: 14px;
   }
 
-  .nav-link:last-of-type {
-    margin-block: 5px;
-  }
-
   .nav-submenu {
     position: static;
     box-shadow: none;
@@ -1265,6 +1261,13 @@ a:focus-visible, button:focus-visible {
   .theme-option {
     width: 38px;
     height: 38px;
+  }
+}
+
+@media (max-width: 850px) {
+
+  .header-inner {
+    min-height: 76px;
   }
 
   .hero {
