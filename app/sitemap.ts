@@ -16,6 +16,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
       images: [absoluteUrl("/cardpick-hero.png")],
     },
+    {
+      url: absoluteUrl("/about-us"),
+      changeFrequency: "monthly",
+      priority: 0.5,
+    },
     ...articles.map((article) => ({
       url: absoluteUrl(`/articles/${article.slug}`),
       lastModified: `${article.date}T00:00:00.000Z`,

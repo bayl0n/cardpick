@@ -22,6 +22,7 @@ const navigationItems: NavigationItem[] = [
   { label: "Start here", children: [
     { href: "/articles/what-card-is-right-for-you", label: "Best for beginners" },
     { href: "/coming-soon", label: "Starter kit" },
+    { href: "/about-us", label: "About us" },
   ] },
   { href: "/articles/what-card-is-right-for-you", label: "Best card for you" },
   { label: "Credit Card", children: [

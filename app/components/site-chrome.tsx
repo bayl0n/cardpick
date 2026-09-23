@@ -45,7 +45,10 @@ export function SiteFooter() {
             <Brand />
             <p>A little clarity for your next card.</p>
           </div>
-          <Link className="text-link" href="/#guides">Explore the guides <Arrow /></Link>
+          <nav className="footer-links" aria-label="Footer navigation">
+            <Link className="text-link" href="/about-us">About us</Link>
+            <Link className="text-link" href="/#guides">Explore the guides <Arrow /></Link>
+          </nav>
         </div>
         <div className="footer-bottom">
           <p>Always read the provider terms, fees, eligibility criteria, and PDS/TMD before applying.</p>
